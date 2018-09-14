@@ -14,22 +14,28 @@ describe('fizzBuzzer', () => {
     });
   });
 
- it('should only return buzz when you git it a number divisible by just 5' , ()=>{
-   const numbers = [5, 10, 25];
-   numbers.forEach((number) =>{
-     const result = fizzBuzzer(number);
-     expect(result).to.equal('buzz');
-   });
- });
+  it('should only return buzz when you git it a number divisible by just 5' , ()=>{
+    const numbers = [5, 10, 25];
+    numbers.forEach((number) =>{
+      const result = fizzBuzzer(number);
+      expect(result).to.equal('buzz');
+    });
+  });
 
- it('should only return fizz-buzz when you git it a number divisible by 5 and 3' , ()=>{
-   const numbers = [15,  30];
-   numbers.forEach((number) =>{
-     const result = fizzBuzzer(number);
-     expect(result).to.equal('fizz-buzz');
-   });
- });
+  it('should only return fizz-buzz when you git it a number divisible by 5 and 3' , ()=>{
+    const numbers = [15,  30];
+    numbers.forEach((number) =>{
+      const result = fizzBuzzer(number);
+      expect(result).to.equal('fizz-buzz');
+    });
+  });
 
-
+  it('should throw an error on non numeric input' , ()=>{
+    const inputs = ['15', 'a', 'fizz'];
+    inputs.forEach((input) =>{
+      const result = () => fizzBuzzer(input);
+      expect(result).to.throw(Error);
+    });
+  });
 
 });
