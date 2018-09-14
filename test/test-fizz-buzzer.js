@@ -30,6 +30,13 @@ describe('fizzBuzzer', () => {
     });
   });
 
+  it('should return input if not divisible by 3 or 5', () => {
+    const inputs = [7, 11, 32];
+    inputs.forEach(input => {
+      expect(fizzBuzzer(input)).to.equal(input);
+    });
+  });
+
   it('should throw an error on non numeric input' , ()=>{
     const inputs = ['15', 'a', 'fizz'];
     inputs.forEach((input) =>{
